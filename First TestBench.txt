@@ -1,0 +1,22 @@
+// Pedestrian Button Not Pressed
+module t_controller_tb;
+  reg tclk;
+  reg tI;
+  wire [1:0] tmode; 
+  wire tA1, tA2, tB, tC;
+  
+  t_controller t1 (tA1,tA2,tB,tC,tmode,tclk,tI);
+
+    initial begin
+    tclk = 1;
+    tI = 0;
+    #1100 $finish;
+    end
+  always #5 tclk = ~tclk;
+  
+  initial 
+  begin 
+  $monitor("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+  end 
+  endmodule
+

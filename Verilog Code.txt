@@ -1,0 +1,60 @@
+module t_controller(A1,A2,B,C,mode,clk,I);
+  input clk;
+  input I;
+  output reg [1:0] mode;
+  output reg A1, A2, B, C;
+
+  //We built the counter behaviorally
+
+  reg [5:0] counter;
+  
+  always @ (posedge clk)
+  begin
+  if (I == 1) begin
+      mode <= 2'b00;
+      counter <= 0;
+    end begin
+      case (mode)
+        2'b00: if (counter >= 30) begin
+                 mode <= 2'b01;
+                 counter <= 0;
+               end else begin
+                 counter <= counter + 1;
+               end
+        2'b01: if (counter >= 30) begin
+                 mode <= 2'b10;
+                 counter <= 0;
+               end else begin
+                 counter <= counter + 1;
+               end
+        2'b10: if (counter >= 10) begin
+                 mode <= 2'b11;
+                 counter <= 0;
+               end else begin
+                 counter <= counter + 1;
+               end
+        2'b11: if (counter >= 20) begin
+                 mode <= 2'b01;
+                 counter <= 0;
+               end else begin
+                 counter <= counter + 1;
+               end
+        default: begin
+                   mode <= 2'b01;
+                   counter <= 0;
+                 end
+      endcase
+    end
+  end
+  
+  always @(*)
+  begin 
+  case (mode)
+      2'b00: {A1, A2, B, C} = 4'b0000;
+      2'b01: {A1, A2, B, C} = 4'b1001;
+      2'b10: {A1, A2, B, C} = 4'b1100;
+      2'b11: {A1, A2, B, C} = 4'b0010;
+      default: {A1, A2, B, C} = 4'b0000;
+    endcase
+  end
+endmodule

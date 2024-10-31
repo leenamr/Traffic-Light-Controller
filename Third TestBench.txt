@@ -1,0 +1,30 @@
+// Pedestrian Button Pressed On Twice
+module t_controller_tb;
+  reg tclk;
+  reg tI;
+  wire [1:0] tmode;
+  wire tA1, tA2, tB, tC;
+  
+  t_controller t1 (tA1,tA2,tB,tC,tmode,tclk,tI);
+ 
+  always #5 tclk = ~tclk;
+  
+  initial 
+  begin
+  tclk=1; tI=1;
+ #300 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=0;
+ #300 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=0;
+ #100 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=1;
+ #200 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=0;
+ #300 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=0;
+ #100 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ tclk=1; tI=0;
+ #200 $display("Mode %d: I= %b , A1= %b, A2= %b, B= %b, C= %b",tmode,tI,tA1,tA2,tB,tC);
+ #300 $finish;
+  end 
+  endmodule 
