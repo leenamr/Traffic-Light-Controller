@@ -24,7 +24,7 @@ The traffic controller operates in a sequence of modes (Mode 1, Mode 2, Mode 3),
   - Pedestrian button pressed twice.
 
 ## Files
-**Verilog code.txt:** Core Verilog code for the traffic controller.
+**Verilog code.txt:** Core Verilog code for the traffic controller.<br>
 **1st Testbench.txt, 2nd Testbench.txt, 3rd Testbench.txt:** Testbench examples for simulating the controller’s performance.
 
 ## Conclusion
