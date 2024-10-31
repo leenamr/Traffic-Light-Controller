@@ -22,3 +22,10 @@ The traffic controller operates in a sequence of modes (Mode 1, Mode 2, Mode 3),
   - No pedestrian crossing.
   - Pedestrian button pressed once.
   - Pedestrian button pressed twice.
+
+## Files
+**Verilog code.txt:** Core Verilog code for the traffic controller.
+**1st Testbench.txt, 2nd Testbench.txt, 3rd Testbench.txt:** Testbench examples for simulating the controller’s performance.
+
+## Conclusion
+This Verilog-based traffic controller effectively manages a T-intersection, balancing traffic flow with pedestrian safety. By simulating the design, its reliability in handling dynamic traffic conditions and pedestrian crossings is confirmed.
