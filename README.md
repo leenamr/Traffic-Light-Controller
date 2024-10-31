@@ -1,20 +1,24 @@
 # T-Intersection Traffic Controller: Verilog Design and Simulation
 
 ## Project Overview
-This project presents the design and simulation of a Verilog-based traffic controller for a T-intersection, focused on optimizing traffic flow and ensuring pedestrian safety. The controller manages vehicle movement from three directions, utilizing a two-layer control system to handle traffic complexity even with a single input.
+This project presents a Verilog-based design and simulation of a traffic controller for a T-intersection. The controller optimizes traffic flow and enhances pedestrian safety by managing vehicle movement from three sides. It includes a two-layer control system for one direction, integrating a pedestrian push button to halt traffic, enabling safe pedestrian crossings.
 
-## Features
-Traffic Flow Optimization: Directs vehicles efficiently from three sides to reduce congestion.
-Two-Layered Control System: Adds a layer of control in one direction, enhancing flow management with a single input.
-Pedestrian Safety: Equipped with a pedestrian push button to halt traffic, allowing safe pedestrian crossings.
-Verilog Simulation: Simulated in Verilog to validate performance, showing improved management and safety at the intersection.
+## Objectives
+- **Traffic Management:** Efficiently direct vehicle flow at a T-intersection using a sequence of traffic modes.
+- **Pedestrian Safety:** Implement a pedestrian push button to safely interrupt vehicle movement when needed.
+- **Verilog Simulation:** Simulate the controller to validate its functionality in real-time conditions.
 
-How It Works
-Traffic Management: Controls vehicle movement from three sides, optimizing timing and direction to minimize congestion.
-Two-Layer Control: Implements a layered control system in one direction to effectively handle complex traffic flow.
-Pedestrian Priority: A pedestrian push button temporarily stops vehicles, ensuring safe crossings for pedestrians.
+## System Components
+- **Verilog Program:** Core code implementing the traffic controller logic.
+- **Traffic Modes:** Defined sequence for each traffic light to optimize flow.
+- **Pedestrian Control:** Mechanism to allow safe crossings by halting all traffic.
 
-System Design
-Input: Single input signal used to detect traffic or pedestrian needs.
-Outputs: Four outputs to control vehicle and pedestrian signals across the intersection.
-Control Logic: Designed to handle real-time scenarios with minimal inputs, enhancing simplicity and functionality.
+## Modes and Operation
+The traffic controller operates in a sequence of modes (Mode 1, Mode 2, Mode 3), with a special Mode 0 activated by the pedestrian push button, halting traffic for safe crossings.
+
+## Verilog Implementation
+- **Traffic Controller Module:** Implements the traffic signal logic and controls vehicle and pedestrian flows.
+- **TestBenches:** Simulates different scenarios:
+  - No pedestrian crossing.
+  - Pedestrian button pressed once.
+  - Pedestrian button pressed twice.
